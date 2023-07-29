@@ -1,0 +1,24 @@
+/*https://coolors.co/palette/001524-15616d-ffecd1-ff7d00-78290f*/
+
+body, html
+{
+    height:100%;
+    padding: 0;
+    margin: 0;
+}
+
+header
+{
+    display: flex;
+    align-items: center;
+    background-color: #fa7f0c;
+    justify-content: space-evenly;
+    border: 2px solid #78290F;
+    border-radius: 4px;
+
+}
+
+header:first-child
+{
+    justify-self: flex-start;
+}
