@@ -22,3 +22,17 @@ header:first-child
 {
     justify-self: flex-start;
 }
+
+button
+{
+    padding: 1rem;
+    border-radius: 2rem;
+    font-size: 600;
+}
+
+footer
+{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
