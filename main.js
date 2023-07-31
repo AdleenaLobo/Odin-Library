@@ -18,6 +18,47 @@ function Book()
         console.log("Title:"+ this.title+ " Author:"+this.author+" No_of_pages:"+this.no_of_pages+" Status:"+this.read);
     }
 }
+const article = document.querySelector('article');
+
+Book.prototype.callArray= function()
+{
+    let temp = document.createElement('div');
+    temp.classList.add('pluck-card');
+    
+        this.tempContent(temp);
+        article.appendChild(temp);
+
+}
+
+Book.prototype.tempContent= function(temp)
+{
+    for (let i =0 ; i<4 ; i++)
+    {
+        
+    let divi = document.createElement('p');
+        switch(i)
+        {
+            case 0: 
+            divi.textContent = `Title: ${this.title}`;
+            break;
+
+            case 1:
+            divi.textContent = `Author: ${this.author}`;
+            break;
+
+            case 2:
+            divi.textContent = `Pages: ${this.no_of_pages} pages`;
+            break;
+
+            case 3:
+            divi.textContent = `Status: ${this.read}`;
+            break;
+        }
+        temp.appendChild(divi);
+    }
+
+
+}
 
 const button = document.querySelector('.Add');
 button.addEventListener('click', ()=>
@@ -26,5 +67,6 @@ button.addEventListener('click', ()=>
     obj.form();
     obj.info();
     array.push(obj);
-    console.log(array);
+    obj.callArray();
 })
+
