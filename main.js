@@ -9,6 +9,8 @@ function Book()
     let read;
     let temp;
     let bun;
+    let formm;
+    let outer_form;
 
     this.info = function()
     {
@@ -18,18 +20,25 @@ function Book()
 
 Book.prototype.form = function ()
 {
-    const t = document.createElement('div');
-    t.innerHTML = `<form><label for = "title">Enter the title: </label><input type = "text" id = "title">
+    this.outer_form = document.createElement('div');
+    this.formm = document.createElement('div');
+    this.formm.innerHTML = `<form><label for = "title">Enter the title: </label><input type = "text" id = "title">
     <label for = "author">Enter the author name: </label><input type = "text" id = "author">
     <label for = "no_of_pages">Enter the number of pages: </label><input type = "text" id = "no_of_pages">
-    <label for = "status">Enter the status: </label><input type = "text" id = "status"></form>`;
-    t.classList.add('fornmEnable');
-    body.appendChild(t);
+    <label for = "status">Enter the status: </label><input type = "text" id = "status">
+    <button type = "submit" id = "bun">Submit</button></form>`;
+    this.outer_form.appendChild(this.formm);
+    body.classList.add('body1');
+    this.outer_form.classList.add('formEnable');
+    body.appendChild(this.outer_form);
 
-   this.title = document.getElementById('title').value;
-    this.author = document.getElementById('author').value;
-    this.no_of_pages = document.getElementById('no_of_pages').value;
-    this.read = document.getElementById('status').value;
+    const button = document.getElementById('bun').addEventListener('click', ()=>
+    {
+        this.title = document.getElementById('title').value;
+         this.author = document.getElementById('author').value;
+         this.no_of_pages = document.getElementById('no_of_pages').value;
+         this.read = document.getElementById('status').value;
+    });
 };
 
 const article = document.querySelector('article');
