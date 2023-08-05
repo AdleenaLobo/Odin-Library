@@ -12,10 +12,6 @@ function Book()
     let formm;
     let outer_form;
 
-    this.info = function()
-    {
-        console.log("Title:"+ this.title+ " Author:"+this.author+" No_of_pages:"+this.no_of_pages+" Status:"+this.read);
-    }
 }
 
 Book.prototype.form = function ()
@@ -31,38 +27,50 @@ Book.prototype.form = function ()
     body.classList.add('body1');
     this.outer_form.classList.add('formEnable');
     body.appendChild(this.outer_form);
-
-    const button = document.getElementById('bun').addEventListener('click', ()=>
+    const button1 = document.getElementById('bun');
+    button1.addEventListener('click', ()=>
     {
-        this.title = document.getElementById('title').value;
-         this.author = document.getElementById('author').value;
-         this.no_of_pages = document.getElementById('no_of_pages').value;
-         this.read = document.getElementById('status').value;
+    this.info();
+    array.push(this);
+    this.callArray();
     });
 };
+
+Book.prototype.info = function()
+{
+    
+    this.title = document.getElementById('title').value;
+    this.author = document.getElementById('author').value;
+    this.no_of_pages = document.getElementById('no_of_pages').value;
+    this.read = document.getElementById('status').value;
+
+    console.log("Title:"+ this.title+ " Author:"+this.author+" No_of_pages:"+this.no_of_pages+" Status:"+this.read);
+    
+
+}
 
 const article = document.querySelector('article');
 
 Book.prototype.callArray= function()
 {
-    this. temp = document.createElement('div');
-    this.temp.classList.add('pluck-card');
+    let temp = document.createElement('div');
+    temp.classList.add('pluck-card');
 
     let outerbun = document.createElement('div');
-    this. bun = document.createElement('button');
+    let bun = document.createElement('button');
 
-    this.bun.textContent = 'delete';
-    this.bun.classList.add('spec-bun');
-        this.tempContent(this.temp);
-        outerbun.appendChild(this.bun);
-        this.temp.appendChild(outerbun);
-        article.appendChild(this.temp);
+    bun.textContent = 'delete';
+    bun.classList.add('spec-bun');
+        this.tempContent(temp);
+        outerbun.appendChild(bun);
+        temp.appendChild(outerbun);
+        article.appendChild(temp);
 
-        this.bun.addEventListener('click', ()=>{
-            article.removeChild(this.temp);
-        })
+        bun.addEventListener('click', ()=>{
+            article.removeChild(temp);
+        });
 
-}
+};
 
 
 Book.prototype.tempContent= function(temp)
@@ -100,9 +108,8 @@ button.addEventListener('click', ()=>
 {
     let obj = new Book();
     obj.form();
-    obj.info();
-    array.push(obj);
-    obj.callArray();
-})
+});
+
+
 
 
