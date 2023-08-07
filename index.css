@@ -1,4 +1,7 @@
-/*https://coolors.co/palette/001524-15616d-ffecd1-ff7d00-78290f*/
+@font-face {
+    font-family: myStyle;
+    src: url(fonts/Josefin_Sans/JosefinSans-VariableFont_wght.ttf);
+}
 
 body, html
 {
@@ -6,16 +9,20 @@ body, html
     padding: 0;
     margin: 0;
     position: relative;
+    background-color: #219ebc;
+    font-family: myStyle;
 }
 
 header
 {
     display: flex;
     align-items: center;
-    background-color: #fa7f0c;
+    background-color: #023047;
     justify-content: space-evenly;
-    border: 2px solid #78290F;
+    border: 2px solid #a7dcf5;
     border-radius: 2rem;
+    color: lightgoldenrodyellow;
+    font-family: myStyle;
 
 }
 
@@ -27,7 +34,8 @@ header:first-child
 button
 {
     padding: 1rem;
-    border-radius: 2rem;
+    border-radius: 1rem;
+    background-color: lightgoldenrodyellow;
     
 }
 
@@ -57,10 +65,11 @@ article
 article>.pluck-card 
 {
     padding: 4px;
-    border: 2px solid black;
+    border: 2px solid #023047;
     border-radius: 2rem;
-    box-shadow: 10px -10px 5px #78290F;
-
+    box-shadow: 10px -10px 5px #0e445d;
+    background-color: #a7dcf5;
+    font-family: myStyle;
 }
 
 article>.pluck-card>div:last-child
@@ -93,3 +102,12 @@ form
     background-color: rgba(10, 10, 10, 0.219);
 }
 
+.temop
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: myStyle;
+    color: rgba(10, 10, 10, 0.463);
+    font-size: xx-large;
+}

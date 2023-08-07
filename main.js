@@ -1,6 +1,11 @@
 const body = document.querySelector('body');
 
+const article = document.querySelector('article');
+
 let array = [];
+
+let temp = document.createElement('div');
+
 
 function Book()
 {   let title;
@@ -45,7 +50,11 @@ Book.prototype.form = function ()
         
     this.info();
     body.classList.remove('body1');
-    body.removeChild(this.outer_form);
+   body.removeChild(this.outer_form);
+ 
+    article.removeChild(temp);
+    article.classList.remove('temop');
+
     });
 };
 
@@ -65,7 +74,6 @@ Book.prototype.info = function()
 
 }
 
-const article = document.querySelector('article');
 
 Book.prototype.callArray= function()
 {
@@ -84,7 +92,10 @@ Book.prototype.callArray= function()
         article.appendChild(this.temp);
 
         this.bun.addEventListener('click', ()=>{
+            console.log(
+                array.pop());
             article.removeChild(this.temp);
+            check();
         });
 
 };
@@ -119,6 +130,12 @@ Book.prototype.tempContent= function(temp)
 
 
 }
-
-
+function check(){
+if(array.length == 0 )
+{
+    article.classList.add('temop');
+    temp.textContent= `The shelf is empty`;
+    article.appendChild(temp);
+}}
+check();
 console.log(array);
